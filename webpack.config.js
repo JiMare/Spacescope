@@ -1,13 +1,12 @@
-const prod = process.env.NODE_ENV === "production";
-
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  mode: prod ? "production" : "development",
+  mode: "development",
   entry: "./src/index.tsx",
   output: {
     path: __dirname + "/dist/",
+    filename: 'bundle-[contenthash:6].js',
   },
   module: {
     rules: [
@@ -23,9 +22,15 @@ module.exports = {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
+      {
+        test: /\.jpe?g|png|svg|webp$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'img/[name]-[contenthash:6][ext]'
+        }
+      },
     ],
   },
-  devtool: prod ? undefined : "source-map",
   plugins: [
     new HtmlWebpackPlugin({
       template: "index.html",
