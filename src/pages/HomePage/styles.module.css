@@ -1,0 +1,17 @@
+.home {
+  background-image: url('./img/homepage.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .home {
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+}
