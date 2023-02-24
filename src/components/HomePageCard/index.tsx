@@ -1,4 +1,4 @@
-import classes from './styles.module.css';
+import classes from './styles.module.scss';
 
 const HomePageCard = (): JSX.Element => {
   return (

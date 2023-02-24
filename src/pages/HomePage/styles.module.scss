@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .home {
   background-image: url('./img/homepage.png');
   background-size: cover;
@@ -8,7 +10,7 @@
   justify-content: center;
   align-items: center;
 
-  @media (min-width: 768px) {
+  @media (min-width: $width-md) {
     justify-content: flex-end;
     align-items: flex-start;
   }
