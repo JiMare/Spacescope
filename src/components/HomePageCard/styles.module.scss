@@ -1,10 +1,18 @@
+@import '../../variables.scss';
+@import '../../mixins.scss';
+
 .card {
-  color: #eddcd0;
+  color: $color-card-text;
   margin-inline: 20px;
   max-width: 500px;
   padding: 20px;
   border-radius: 5%;
   background-color: rgba(0, 0, 0, 0.5);
+
+  @include breakpoint-md {
+    margin-inline: 100px;
+    margin-top: 100px;
+  }
 }
 
 .title {
@@ -12,14 +20,8 @@
   font-weight: 900;
   padding-top: 15px;
   padding-bottom: 50px;
-}
 
-@media (min-width: 768px) {
-  .title {
+  @include breakpoint-md {
     font-size: 60px;
-  }
-  .card {
-    margin-inline: 100px;
-    margin-top: 100px;
   }
 }

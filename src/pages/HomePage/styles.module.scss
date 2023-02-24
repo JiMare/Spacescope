@@ -1,3 +1,6 @@
+@import '../../variables.scss';
+@import '../../mixins.scss';
+
 .home {
   background-image: url('./img/homepage.png');
   background-size: cover;
@@ -7,10 +10,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-@media (min-width: 768px) {
-  .home {
+  @include breakpoint-md {
     justify-content: flex-end;
     align-items: flex-start;
   }
