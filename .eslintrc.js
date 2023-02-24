@@ -1,5 +1,5 @@
 module.exports = {
-  ignorePatterns: ['.eslintrc.js', 'globals.d.ts', 'webpack.config.js'],
+  ignorePatterns: ['.eslintrc.js', 'webpack.config.js'],
   env: {
     browser: true,
     es2021: true,

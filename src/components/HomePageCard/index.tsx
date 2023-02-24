@@ -1,5 +1,4 @@
-import React from 'react';
-import classes from './HomePageCard.module.css';
+import classes from './styles.module.css';
 
 const HomePageCard = (): JSX.Element => {
   return (

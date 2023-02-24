@@ -1,5 +1,5 @@
 .home {
-  background-image: url('../assets/images/homepage.png');
+  background-image: url('./img/homepage.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

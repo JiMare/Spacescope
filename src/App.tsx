@@ -1,6 +1,5 @@
-import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import HomePage from './pages/HomePage';
+import HomePage from './pages/HomePage/index';
 
 const App = (): JSX.Element => {
   return (
