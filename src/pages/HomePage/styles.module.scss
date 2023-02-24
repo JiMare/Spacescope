@@ -1,4 +1,5 @@
 @import '../../variables.scss';
+@import '../../mixins.scss';
 
 .home {
   background-image: url('./img/homepage.png');
@@ -10,7 +11,7 @@
   justify-content: center;
   align-items: center;
 
-  @media (min-width: $width-md) {
+  @include breakpoint-md {
     justify-content: flex-end;
     align-items: flex-start;
   }

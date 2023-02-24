@@ -1,4 +1,5 @@
 @import '../../variables.scss';
+@import '../../mixins.scss';
 
 .card {
   color: $color-card-text;
@@ -8,7 +9,7 @@
   border-radius: 5%;
   background-color: rgba(0, 0, 0, 0.5);
 
-  @media (min-width: $width-md) {
+  @include breakpoint-md {
     margin-inline: 100px;
     margin-top: 100px;
   }
@@ -20,7 +21,7 @@
   padding-top: 15px;
   padding-bottom: 50px;
 
-  @media (min-width: $width-md) {
+  @include breakpoint-md {
     font-size: 60px;
   }
 }
