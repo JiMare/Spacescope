@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 import './button.css';
 
 export interface ButtonProps {
@@ -13,7 +14,7 @@ export interface ButtonProps {
   /**
    * Button contents
    */
-  children: any;
+  children: React.ReactNode;
   /**
    * Optional click handler
    */
@@ -27,15 +28,19 @@ const Button = ({
   primary = false,
   size = 'medium',
   children,
-  ...props
+  onClick,
 }: ButtonProps) : JSX.Element => {
-  const mode = primary ? 'button--primary' : 'button--secondary';
   return (
     <button
       type="button"
-      className={`button button--${size} ${mode}`}
-        // eslint-disable-next-line react/jsx-props-no-spreading
-      {...props}
+      className={
+        clsx(
+        `button button--${size}`, { 
+          'button--primary': primary,
+          'button--secondary': !primary
+        })
+      }
+      onClick={onClick}
     >
       {children}
     </button>
