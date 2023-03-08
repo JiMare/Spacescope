@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import './button.css';
+import styles from './button.module.scss';
 
 export interface ButtonProps {
   /**
@@ -19,6 +19,10 @@ export interface ButtonProps {
    * Optional click handler
    */
   onClick?: () => void;
+  /**
+   * True if button is disabled
+   */
+  disabled?: boolean;
 }
 
 /**
@@ -28,19 +32,20 @@ const Button = ({
   primary = false,
   size = 'medium',
   children,
-  onClick,
+  onClick, disabled = false
 }: ButtonProps) : JSX.Element => {
   return (
     <button
       type="button"
       className={
-        clsx(
-        `button button--${size}`, { 
-          'button--primary': primary,
-          'button--secondary': !primary
+        clsx(styles.button,
+        styles['button--'+size], {
+          [styles['button--primary']]: primary,
+              [styles['button--secondary']]: !primary
         })
       }
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </button>

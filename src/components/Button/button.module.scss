@@ -1,0 +1,29 @@
+.button {
+  font-weight: 600;
+  border: 0;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+
+  &--primary {
+    color: #5f3126;
+    background-color: #eee0d5;
+  }
+  &--secondary {
+    color: #eee0d5;
+    background-color: #5f3126;
+  }
+  &--small {
+    font-size: 10px;
+    padding: 15px 25px;
+  }
+  &--medium {
+    font-size: 12px;
+    padding: 20px 30px;
+  }
+  &--large {
+    font-size: 14px;
+    padding: 25px 35px;
+  }
+}
