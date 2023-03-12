@@ -24,5 +24,16 @@ module.exports = {
       },
     ],
     '@typescript-eslint/explicit-function-return-type': 'error',
-  },
+    'react/require-default-props': 'off',
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.stories.*",
+          "**/.storybook/**/*.*"
+        ],
+        "peerDependencies": true
+      }
+    ]
+  }
 };
