@@ -1,0 +1,13 @@
+.title {
+  font-size: 40px;
+  font-weight: 900;
+  padding-top: 15px;
+  padding-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 60px;
+  }
+}
+/*# sourceMappingURL=styles.module.css.map */

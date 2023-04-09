@@ -14,13 +14,13 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  primary: true,
   children: 'Button',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   children: 'Button',
+  secondary: true,
 };
 
 export const Large = Template.bind({});

@@ -1,0 +1,12 @@
+@import '../../../variables.scss';
+@import '../../../mixins.scss';
+
+.wrapper {
+  width: calc(100% - (2 * 1.25rem)); 
+  margin-inline: auto;
+  @include breakpoint-xl {
+    width: 80rem;
+  }
+}
+
+

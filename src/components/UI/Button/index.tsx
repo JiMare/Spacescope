@@ -6,7 +6,7 @@ export interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
-  primary?: boolean;
+  secondary?: boolean;
   /**
    * How large should the button be?
    */
@@ -29,21 +29,15 @@ export interface ButtonProps {
  * Primary UI component for user interaction
  */
 const Button = ({
-  primary = false,
-  size = 'medium',
-  children,
-  onClick, disabled = false
-}: ButtonProps) : JSX.Element => {
+  secondary = false, size = 'medium', children, onClick, disabled = false,
+}: ButtonProps): JSX.Element => {
   return (
     <button
       type="button"
-      className={
-        clsx(styles.button,
-        styles['button--'+size], {
-          [styles['button--primary']]: primary,
-              [styles['button--secondary']]: !primary
-        })
-      }
+      className={clsx(styles.button, styles[`button--${size}`], {
+        [styles['button--primary']]: !secondary,
+        [styles['button--secondary']]: secondary,
+      })}
       onClick={onClick}
       disabled={disabled}
     >

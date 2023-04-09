@@ -4,3 +4,13 @@ dist
 
 ### Intellij ###
 /.idea/
+
+**/module.css
+**/module.css.map
+
+#nekomitovat
+.gitignore
+package.json
+package-lock.json
+.prettierrc
+#

@@ -1,0 +1,11 @@
+.wrapper {
+  width: calc(100% - (2 * 1.25rem));
+  margin-inline: auto;
+}
+
+@media (min-width: 80rem) {
+  .wrapper {
+    width: 80rem;
+  }
+}
+/*# sourceMappingURL=container.module.css.map */
