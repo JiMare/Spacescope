@@ -1,0 +1,15 @@
+@import 'src/variables';
+
+.calendar {
+  input {
+    font-size: $font-size-form;
+    border-radius: 5px;
+    background-color: #eee0d5;
+    height: 30px;
+  }
+  &.invalid {
+    input {
+      color: red;
+    }
+  }
+}

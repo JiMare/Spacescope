@@ -1,5 +1,11 @@
 @import './variables.scss';
 
+@mixin breakpoint-sm {
+  @media (min-width: $width-sm) {
+    @content;
+  }
+}
+
 @mixin breakpoint-md {
   @media (min-width: $width-md) {
     @content;

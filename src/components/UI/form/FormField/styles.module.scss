@@ -1,0 +1,19 @@
+@import 'src/variables';
+
+.formField {
+  margin-bottom: 10px;
+  &> label {
+    display: block;
+    font-size:14px;
+    color: #eee0d5;
+    font-weight: 700;
+    font-family: $font-family;
+  }
+  input, textarea {
+    width: 100%;
+  }
+
+  .required {
+    color: red;
+  }
+}

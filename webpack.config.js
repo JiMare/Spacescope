@@ -9,6 +9,9 @@ module.exports = {
     path: `${__dirname}/dist/`,
     filename: "bundle-[contenthash:6].js",
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   module: {
     rules: [
       {

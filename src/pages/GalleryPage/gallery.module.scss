@@ -1,0 +1,23 @@
+@import 'src/variables';
+
+.gallery {
+    background-color: #513a43;
+    background-image: url('./img/gallery.png');
+    background-repeat: no-repeat;
+    background-position: top left;
+    min-height: 100vh;
+    padding: 20px;
+    h1 {
+        color: $color-card-text;
+    }
+
+    .buttonNext {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .searchForm {
+        display: flex;
+        gap: 20px;
+    }
+}
