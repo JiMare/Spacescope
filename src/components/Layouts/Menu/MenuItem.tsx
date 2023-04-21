@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslate } from '@tolgee/react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import styles from './menu.module.scss';
 
@@ -13,6 +14,7 @@ const activeStyle = {
 };
 
 const MenuItem = ({ label, children, ...props }: Props): JSX.Element => {
+  const { t } = useTranslate();
   return (
     <NavLink
       className={styles.navlink}
@@ -21,7 +23,7 @@ const MenuItem = ({ label, children, ...props }: Props): JSX.Element => {
       /* @ts-ignore somehow style is not defined on NavLink after styling */
       style={({ isActive }): string | undefined => (isActive ? activeStyle : undefined)}
     >
-      {label}
+      {t(label)}
     </NavLink>
   );
 };

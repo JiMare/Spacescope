@@ -1,18 +1,20 @@
-import React from 'react';
 import { useTolgee } from '@tolgee/react';
+import styles from './styles.module.scss';
+import IconButton from '../IconButton';
+import Flex from '../../Layouts/Flex';
 
 const LanguageSwitch = (): JSX.Element => {
   const tolgee = useTolgee(['language']);
 
   return (
-    <div>
-      <button type="button" onClick={(): Promise<void> => tolgee.changeLanguage('cs-CZ')}>
-        CZ
-      </button>
-      <button type="button" onClick={(): Promise<void> => tolgee.changeLanguage('en')}>
-        EN
-      </button>
-    </div>
+    <Flex>
+      <IconButton onClick={(): Promise<void> => tolgee.changeLanguage('cs-CZ')}>
+        <img src="images/cz_icon.png" alt="cz-icon" className={styles.icon} />
+      </IconButton>
+      <IconButton onClick={(): Promise<void> => tolgee.changeLanguage('en')}>
+        <img src="images/en_icon.png" alt="en-icon" className={styles.icon} />
+      </IconButton>
+    </Flex>
   );
 };
 

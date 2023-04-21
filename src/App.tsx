@@ -11,24 +11,25 @@ import WeatherPage from './pages/WeatherPage/index';
 import ContactPage from './pages/ContactPage/index';
 import LanguageSwitch from './components/UI/LanguageSwitch';
 
-const App = (): JSX.Element => {
-  const tolgee = Tolgee().use(DevTools()).use(FormatSimple()).init({
-    language: 'en',
+export const tolgee = Tolgee().use(DevTools()).use(FormatSimple()).init({
+  language: 'en',
 
-    // for development
-    // apiUrl: process.env.REACT_APP_TOLGEE_API_URL,
-    // apiKey: process.env.REACT_APP_TOLGEE_API_KEY,
-    apiUrl: 'https://app.tolgee.io',
-    apiKey: 'tgpak_giztanc7m5wguzrzgq2xmmtghe3xm4zzmy2gkytbn4ygq2jwom',
-  });
+  // for development
+  // apiUrl: process.env.REACT_APP_TOLGEE_API_URL,
+  // apiKey: process.env.REACT_APP_TOLGEE_API_KEY,
+  apiUrl: 'https://app.tolgee.io',
+  apiKey: 'tgpak_giztanc7m5wguzrzgq2xmmtghe3xm4zzmy2gkytbn4ygq2jwom',
+});
+
+const App = (): JSX.Element => {
   return (
     <TolgeeProvider tolgee={tolgee} fallback="Loading...">
       <BrowserRouter>
         <Header>
           <Menu>
-            <MenuItem to="/gallery" label="Gallery" />
-            <MenuItem to="/weather" label="Weather" />
-            <MenuItem to="/contact" label="Contact" />
+            <MenuItem to="/gallery" label="GALLERY" />
+            <MenuItem to="/weather" label="WEATHER" />
+            <MenuItem to="/contact" label="CONTACT" />
             <LanguageSwitch />
           </Menu>
         </Header>

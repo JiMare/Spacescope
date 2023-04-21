@@ -1,8 +1,11 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACP,KAAK,EAAE,0BAA0B;EACjC,aAAa,EAAE,IAAI;CACpB;;AAED,MAAM,EAAE,SAAS,EAAE,KAAK;EACtB,AAAA,QAAQ,CAAC;IACP,KAAK,EAAE,KAAK;GACb",
+    "mappings": "AAGA,AAAA,QAAQ,CAAC;EACP,KAAK,EAAE,0BAA0B;EACjC,aAAa,EAAE,IAAI;CAIpB;;AEMC,MAAM,EAAE,SAAS,EAAE,KAAK;EFZ1B,AAAA,QAAQ,CAAC;IAIL,KAAK,EAAE,KAAK;GAEf",
     "sources": [
-        "container.module.scss"
+        "container.module.scss",
+        "../../../variables.scss",
+        "../../../mixins.scss",
+        "../../../variables.scss"
     ],
     "names": [],
     "file": "container.module.css"

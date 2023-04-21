@@ -1,9 +1,11 @@
 .wrapper {
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   position: absolute;
   top: 0;
-  padding: 10px;
-  opacity: 40%;
+}
+
+.wrapper img {
+  width: 3.75rem;
 }
 /*# sourceMappingURL=header.module.css.map */
