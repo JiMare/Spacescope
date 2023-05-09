@@ -34,6 +34,11 @@ module.exports = {
         ],
         "peerDependencies": true
       }
-    ]
+    ],
+   /*"react/jsx-props-no-spreading": [{
+    "html": "ignore",
+    "custom": "ignore",
+    "explicitSpread": "ignore",
+    }]*/
   }
 };

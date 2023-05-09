@@ -1,0 +1,34 @@
+.button {
+  font-weight: 600;
+  border: 0;
+  border-radius: 1.875rem;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+}
+
+.button--primary {
+  color: #5f3126;
+  background-color: #eee0d5;
+}
+
+.button--secondary {
+  color: #eee0d5;
+  background-color: #5f3126;
+}
+
+.button--small {
+  font-size: 0.625rem;
+  padding: 0.9375rem 1.5625rem;
+}
+
+.button--medium {
+  font-size: 0.75rem;
+  padding: 1.25rem 1.875rem;
+}
+
+.button--large {
+  font-size: 0.875rem;
+  padding: 1.5625rem 2.1875rem;
+}
+/*# sourceMappingURL=button.module.css.map */

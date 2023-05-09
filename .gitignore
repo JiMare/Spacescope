@@ -4,3 +4,9 @@ dist
 
 ### Intellij ###
 /.idea/
+
+**/module.css
+**/module.css.map
+
+.env
+

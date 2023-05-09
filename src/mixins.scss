@@ -5,3 +5,15 @@
     @content;
   }
 }
+
+@mixin breakpoint-lg {
+  @media (min-width: $width-lg) {
+    @content;
+  }
+}
+
+@mixin breakpoint-xl {
+  @media (min-width: $width-xl) {
+    @content;
+  }
+}

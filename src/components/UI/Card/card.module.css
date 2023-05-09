@@ -1,0 +1,16 @@
+.card {
+  max-width: 31.25rem;
+  padding: 1.25rem;
+  border-radius: 0.8rem;
+}
+
+.card--primary {
+  color: #5f3126;
+  background-color: #eee0d5;
+}
+
+.card--secondary {
+  color: #eee0d5;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/*# sourceMappingURL=card.module.css.map */
