@@ -1,0 +1,12 @@
+@import 'src/variables';
+
+.searchPanel {
+  color: $color-card-text;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  font-family: $font-family;
+}

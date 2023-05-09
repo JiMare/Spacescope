@@ -35,6 +35,7 @@ module.exports = {
         "peerDependencies": true
       }
     ],
+    "linebreak-style": 0
    /*"react/jsx-props-no-spreading": [{
     "html": "ignore",
     "custom": "ignore",

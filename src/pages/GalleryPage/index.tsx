@@ -1,7 +1,8 @@
 import React from 'react';
+import MarsPhotos from './MarsPhotos';
 
 const GalleryPage = (): JSX.Element => {
-  return <div>gallery</div>;
+  return <MarsPhotos />;
 };
 
 export default GalleryPage;
