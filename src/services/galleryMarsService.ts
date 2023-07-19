@@ -1,4 +1,5 @@
-import NasaApiClient from './serviceConfig';
+import DateObject from 'react-date-object';
+import { NasaApiClient } from './serviceConfig';
 
 export enum MarsPhotoCamera {
   ALL = 'all',
@@ -45,7 +46,6 @@ export type GetMarsPhotosType = {
 };
 
 // ORIGINAL RESPONSE
-
 type MarsPhotosCameraResponse = {
   id: number;
   name: string;
@@ -68,13 +68,14 @@ type MarsPhotosResponse = {
   rover: MarsPhotosRoverResponse;
 };
 
+// QUERY
 const getMarsPhotos = (
   page: number,
   camera: MarsPhotoCamera,
-  earthDate: string,
-): Promise<GetMarsPhotosType> => NasaApiClient.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?page=${page}
+  earthDate: DateObject,
+): Promise<GetMarsPhotosType> => NasaApiClient.get(`mars-photos/api/v1/rovers/curiosity/photos?page=${page}
 ${camera !== MarsPhotoCamera.ALL ? `&camera=${camera}` : ''}
-&earth_date=${earthDate}`)
+&earth_date=${earthDate.format('YYYY-MM-DD')}`)
   .then((response: any) => {
     const photos = response.data.photos.map((resp: MarsPhotosResponse) => ({
       id: resp.id,

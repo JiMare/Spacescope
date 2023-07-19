@@ -2,14 +2,14 @@ import React from 'react';
 import styles from './styles.module.scss';
 
 export type PhotoGridType = {
-  id: number;
-  url: string;
+  id: number | string;
+  url?: string;
   title?: string;
   description: React.ReactNode;
 };
 
 export interface PhotoGridProps {
-  photos: PhotoGridType[];
+  photos?: PhotoGridType[];
 }
 
 export interface PhotoItemProps {
@@ -18,7 +18,7 @@ export interface PhotoItemProps {
 
 const PhotoItem = ({ photo } : PhotoItemProps): JSX.Element => (
   <div className={styles.photo}>
-    <img src={photo.url} alt={photo.title} />
+    {photo.url && <img src={photo.url} alt={photo.title} />}
     <div className={styles.info}>
       <div className={styles.infoBorder}>
         <strong>{photo.title}</strong>
@@ -32,9 +32,9 @@ const PhotoGrid = ({ photos }: PhotoGridProps): JSX.Element => {
   return (
     <>
       <div className={styles.photoGrid}>
-        {photos.map((photo) => <PhotoItem key={photo.id} photo={photo} />)}
+        {photos && photos.map((photo) => <PhotoItem key={photo.id} photo={photo} />)}
       </div>
-      {photos.length === 0 && <div className={styles.noPhotos}>No photos found</div>}
+      {photos && photos.length === 0 && <div className={styles.noPhotos}>No photos found</div>}
     </>
   );
 };

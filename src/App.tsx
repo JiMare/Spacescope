@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import {
   Tolgee, DevTools, TolgeeProvider, FormatSimple,
 } from '@tolgee/react';
@@ -6,10 +6,12 @@ import HomePage from './pages/HomePage/index';
 import Header from './components/Layouts/Header';
 import Menu from './components/Layouts/Menu';
 import MenuItem from './components/Layouts/Menu/MenuItem';
-import GalleryPage from './pages/GalleryPage/index';
 import WeatherPage from './pages/WeatherPage/index';
 import ContactPage from './pages/ContactPage/index';
 import LanguageSwitch from './components/UI/LanguageSwitch';
+import EpicPhotos from './pages/GalleryPage/EpicPhotos';
+import MarsPhotos from './pages/GalleryPage/MarsPhotos';
+import NasaPhotos from './pages/GalleryPage/NasaPhotos';
 
 export const tolgee = Tolgee().use(DevTools()).use(FormatSimple()).init({
   language: 'en',
@@ -24,10 +26,10 @@ export const tolgee = Tolgee().use(DevTools()).use(FormatSimple()).init({
 const App = (): JSX.Element => {
   return (
     <TolgeeProvider tolgee={tolgee} fallback="Loading...">
-      <BrowserRouter>
+      <HashRouter>
         <Header>
           <Menu>
-            <MenuItem to="/gallery" label="GALLERY" />
+            <MenuItem to="/gallery/mars" label="GALLERY" />
             <MenuItem to="/weather" label="WEATHER" />
             <MenuItem to="/contact" label="CONTACT" />
             <LanguageSwitch />
@@ -35,11 +37,13 @@ const App = (): JSX.Element => {
         </Header>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/gallery/mars" element={<MarsPhotos />} />
+          <Route path="/gallery/epic" element={<EpicPhotos />} />
+          <Route path="/gallery/nasa" element={<NasaPhotos />} />
           <Route path="/weather" element={<WeatherPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </TolgeeProvider>
   );
 };

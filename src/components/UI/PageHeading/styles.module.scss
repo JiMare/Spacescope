@@ -14,4 +14,8 @@
     font-size: 60px;
     margin-right: 50px;
   }
+
+  @include breakpoint-lg {
+    padding-top: 70px;
+  }
 }

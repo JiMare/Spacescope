@@ -29,4 +29,12 @@
   &:hover {
     opacity: 0.9;
   }
+
+  &[disabled] {
+    color: #C9A09B;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 }

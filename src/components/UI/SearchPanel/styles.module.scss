@@ -7,6 +7,8 @@
   margin: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: space-between;
   font-family: $font-family;
 }

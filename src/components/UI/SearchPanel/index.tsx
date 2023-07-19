@@ -5,15 +5,14 @@ import Button from '../Button';
 export interface SearchPanelProps {
   children: React.ReactNode;
   onSearch: () => void;
+  disabled?: boolean;
 }
 
-const SearchPanel = ({ children, onSearch }: SearchPanelProps): JSX.Element => {
+const SearchPanel = ({ children, onSearch, disabled = false }: SearchPanelProps): JSX.Element => {
   return (
     <div className={classes.searchPanel}>
-      <div>
-        {children}
-      </div>
-      <Button onClick={onSearch}>Search</Button>
+      {children}
+      <Button onClick={onSearch} disabled={disabled}>Search</Button>
     </div>
   );
 };

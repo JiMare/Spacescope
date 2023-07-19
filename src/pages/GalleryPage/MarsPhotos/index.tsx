@@ -4,11 +4,11 @@ import gallery from '../gallery.module.scss';
 import PageHeading from '../../../components/UI/PageHeading';
 import SearchPanel from '../../../components/UI/SearchPanel';
 import FormField from '../../../components/UI/form/FormField';
-import galleryService, {
+import galleryMarsService, {
   GetMarsPhotosType,
   MarsPhotoCamera,
   MarsPhotoCameraList,
-} from '../../../services/galleryService';
+} from '../../../services/galleryMarsService';
 import PhotoGrid, { PhotoGridType } from '../../../components/UI/PhotoGrid';
 import FormSelect from '../../../components/UI/form/FormSelect';
 import Loading from '../../../components/UI/Loading';
@@ -16,7 +16,7 @@ import Calendar from '../../../components/UI/form/Calendar';
 import Button from '../../../components/UI/Button';
 
 const MarsPhotos = (): JSX.Element => {
-  const [photos, setPhotos] = useState<PhotoGridType[]>([]);
+  const [photos, setPhotos] = useState<PhotoGridType[]>();
   const [camera, setCamera] = useState<MarsPhotoCamera>(MarsPhotoCamera.ALL);
   const [page, setPage] = useState<number>(1);
   const [displayNext, setDisplayNext] = useState<boolean>(true);
@@ -27,10 +27,10 @@ const MarsPhotos = (): JSX.Element => {
 
   const loadPhoto = (add: boolean, pageNumber: number): void => {
     setLoading(true);
-    galleryService.getMarsPhotos(
+    galleryMarsService.getMarsPhotos(
       pageNumber,
       camera,
-      earthDate.format('YYYY-MM-DD'),
+      earthDate,
     )
       .then((response: GetMarsPhotosType) => {
         const newPhotos = response.photos.map((photo) => (
@@ -59,7 +59,7 @@ const MarsPhotos = (): JSX.Element => {
           }));
         setDisplayNext(response.hasNext);
 
-        setPhotos(add ? [...photos, ...newPhotos] : newPhotos);
+        setPhotos(add ? [...photos || [], ...newPhotos] : newPhotos);
         setPage(add ? page + 1 : 1);
         setLoading(false);
       });
@@ -97,7 +97,7 @@ const MarsPhotos = (): JSX.Element => {
           </FormField>
         </div>
       </SearchPanel>
-      <PhotoGrid photos={photos} />
+      {photos && <PhotoGrid photos={photos} />}
       {loading && <Loading />}
       {displayNext && !loading
       && (

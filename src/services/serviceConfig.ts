@@ -2,12 +2,15 @@ const axios = require('axios');
 
 const NASA_API_KEY = 'DEMO_KEY';
 
-const NasaApiClient = axios.create({
+export const NasaApiClient = axios.create({
   baseURL: 'https://api.nasa.gov',
-  timeout: 1000,
+  timeout: 3000,
   params: {
     api_key: NASA_API_KEY,
   },
 });
 
-export default NasaApiClient;
+export const NasaImgeApiClient = axios.create({
+  baseURL: 'https://images-api.nasa.gov',
+  timeout: 3000,
+});
